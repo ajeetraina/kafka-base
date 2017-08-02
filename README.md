@@ -73,7 +73,7 @@ volumes:
   graylog_zookeeper1_data:  
   ```
 2) Deploy the kafka stack by copying the following docker-compose.yml and doing a "docker stack deploy -c docker-compose.yml" graylog_kafka  
-
+```
 version: '3.1'
 services:
  kafka0:
@@ -106,11 +106,12 @@ networks:
 volumes:
   graylog_kafka0:
     external: true  
+    ```
 Complex Cluster Configuration:   
 Complex Swarm Configuration consisting of 3 kafka nodes and 3 zookeeper nodes backed by EBS volume using the rexray driver.
   
 1) Deploy the zookeeper stack by copying the following docker-compose.yml and doing a "docker stack deploy -c docker-compose.yml" graylog_zookeeper  
-  
+  ```
 version: '3.1'
 services:
  zookeeper1:
@@ -205,9 +206,10 @@ volumes:
   graylog_zookeeper2_datalog:
   graylog_zookeeper2_data:
   graylog_zookeeper3_datalog:
-  graylog_zookeeper3_data:  
+  graylog_zookeeper3_data: 
+  ```
 2) Deploy the kafka stack by copying the following docker-compose.yml and doing a "docker stack deploy -c docker-compose.yml" graylog_kafka  
-  
+  ```
 version: '3.1'
 services:
  kafka0:
@@ -335,3 +337,4 @@ volumes:
     external: true
   graylog_kafka2:
     external: true
+    ```
