@@ -21,4 +21,4 @@ done
 
 /usr/bin/create-topics.sh &
 
-exec "$@" #&& /usr/sbin/create-topics.sh
+exec "$@"
