@@ -1,0 +1,23 @@
+version: '3.1'
+services:
+ zookeeper1:
+    image: zookeeper
+    environment:
+        ZOO_MY_ID: 1
+        ZOO_SERVERS: server.1=0.0.0.0:2888:3888 
+        JVMFLAGS: "-Xmx512M -Xms256M"
+    ports:
+      - "2081:2181"
+    networks:
+      - net
+    volumes:
+      - graylog_zookeeper1_datalog:/datalog
+      - graylog_zookeeper1_data:/data
+
+networks:
+  net:
+    driver: overlay
+
+volumes:
+  graylog_zookeeper1_datalog:
+  graylog_zookeeper1_data:  
